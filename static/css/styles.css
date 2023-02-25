@@ -1,0 +1,35 @@
+body {
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    background-color: #f4f3f3;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.body-container {
+    margin: auto;
+    width: 50%;
+    border: 3px solid;
+    padding: 10px;
+}
+
+.spam {
+    color: darkred;
+}
+
+.no-spam {
+    color: darkblue;
+}
+
+.input-field {
+    width: 100%;
+    height: 50%;
+}
