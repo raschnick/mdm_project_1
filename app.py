@@ -1,13 +1,17 @@
 import joblib
-from flask import Flask, jsonify, render_template, request
-from sklearn.feature_extraction.text import CountVectorizer
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    return render_template('login.html')
+
+
+@app.route('/home/<username>')
+def home(username):
+    return render_template('home.html', username=username)
 
 
 @app.route('/predict', methods=['POST'])
@@ -22,11 +26,9 @@ def predict():
         data = [message]
         vect = cv.transform(data).toarray()
         my_prediction = spam_predictor.predict(vect)
-        return render_template('result.html', prediction = my_prediction)
-
-
+        return render_template('result.html', prediction=my_prediction)
 
 
 if __name__ == '__main__':
-    #app.run(host='0.0.0.0', debug=True)
+    # app.run(host='0.0.0.0', debug=True)
     app.run()
