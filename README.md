@@ -3,6 +3,7 @@
 ## Dataset
 https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset
 
+## Deployment
 ### Deploy this app to an azure app service
 ```
 $ az webapp up --name rani-flask-demo --resource-group mdm --location switzerlandnorth --runtime PYTHON:3.11 --sku F1 --logs
