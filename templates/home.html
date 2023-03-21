@@ -1,20 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="body-container">
 
-    <p>Welcome <b>{{username}}</b></p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white content-box">
+                <div class="card-body p-5 text-center">
 
-    <form action="{{ url_for('predict')}}" method="POST">
-        <p>Enter your message here to check if it's spam:</p>
-        <label>
-            <textarea name="message" rows="6" class="input-field"></textarea>
-        </label>
-        <br/>
+                    <div class="mb-md-5 mt-md-4 pb-5">
 
-        <input type="submit" value="Predict">
+                        <h2 class="mb-2">Welcome <b>{{username}}!</b></h2>
 
-    </form>
+                        <p class="text-white-50 mb-5">Enter a text message in the text box below to predict if it's a spam or not!</p>
 
+                        <form action="{{ url_for('predict')}}" method="POST">
+                            <div class="form-outline form-white mb-4">
+                                <label>
+                                    <textarea name="message" rows="6" class="input-field"></textarea>
+                                </label>
+                            </div>
+                            <input class="btn btn-outline-light btn-lg px-5" type="submit" value="Predict">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}
