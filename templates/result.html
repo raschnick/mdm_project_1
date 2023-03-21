@@ -2,14 +2,32 @@
 
 {% block content %}
 
-<div class="body-container">
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white content-box">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-5 mt-md-4 pb-5">
 
-    {% if prediction == 1%}
-    <h2 class="spam">Spam</h2>
-    {% elif prediction == 0%}
-    <h2 class="no-spam">No Spam</h2>
-    {% endif %}
+                            <h4 class="mb-5">Result:</h4>
 
-</div>
+                            {% if prediction == 1 %}
+                            <img class="mb-2" src="/static/icons/alert.svg"/>
+                            <h2 class="mb-5">Spam</h2>
+                            {% elif prediction == 0 %}
+                            <img class="mb-2" src="/static/icons/checkmark.svg"/>
+                            <h2 class="mb-5">No Spam</h2>
+                            {% endif %}
+
+                            <input class="btn btn-outline-light btn-lg px-5" value="Back" onclick="history.back()">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
