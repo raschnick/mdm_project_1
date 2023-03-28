@@ -4,7 +4,7 @@ function openUrl() {
 
     if (username !== "" && password !== "") {
         var urlWithParam = "/home/" + username;
-        window.open(urlWithParam);
+        window.open(urlWithParam, "_self");
     } else {
         alert("Please enter a username and a password!")
     }
