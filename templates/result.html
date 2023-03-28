@@ -13,11 +13,11 @@
                             <h4 class="mb-5">Result:</h4>
 
                             {% if prediction == 1 %}
-                            <img class="mb-2" src="/static/icons/alert.svg"/>
-                            <h2 class="mb-5">Spam</h2>
+                                <img class="mb-2" src="/static/icons/alert.svg"/>
+                                <h2 class="mb-5" id="result-text">Spam</h2>
                             {% elif prediction == 0 %}
-                            <img class="mb-2" src="/static/icons/checkmark.svg"/>
-                            <h2 class="mb-5">No Spam</h2>
+                                <img class="mb-2" src="/static/icons/checkmark.svg"/>
+                                <h2 class="mb-5" id="result-text">No Spam</h2>
                             {% endif %}
 
                             <input class="btn btn-outline-light btn-lg px-5" value="Back" onclick="history.back()">
@@ -29,5 +29,8 @@
         </div>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script src="../static/js/confetti.js"></script>
 
 {% endblock %}
